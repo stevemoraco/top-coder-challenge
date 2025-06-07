@@ -1214,3 +1214,4 @@ D=float(sys.argv[1]);M=float(sys.argv[2]);R=float(sys.argv[3])
 res=predict(D,M,R)
 print(f"{res:.2f}")
 PY
+
