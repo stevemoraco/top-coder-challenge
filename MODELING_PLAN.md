@@ -5,9 +5,8 @@ After examining historical reimbursement data, we propose an average absolute er
 
 ## Approach
 1. **Baseline:** A linear regression model yielded errors over $175.
-2. **Polynomial Models:** Increasing degree decreased error; degree-4 gave ~\$82 MAE.
-3. **Regularized Regression:** Applying Ridge regression to the degree-4 features further reduced MAE to about \$77 on the public cases.
+2. **Polynomial Models:** Increasing degree decreased error; degree‑4 gave ~\$82 MAE.
+3. **Regularized Regression:** Applying Ridge regression to degree‑4 features dropped MAE to about \$77.
+4. **Degree‑5 Ridge Model:** Expanding to 5th‑degree features and refitting with a small regularization term lowered MAE further to about \$72 on the public cases.
 
-Our current implementation encodes these Ridge coefficients directly in `run.sh` so that no external dependencies are required at runtime.
-
-Further reductions may be possible by exploring additional feature engineering or non-linear models, but this provides a reasonable trade-off between complexity and accuracy for production use.
+The coefficients for this final model are baked directly into `run.sh` using an inline Python snippet so no external dependencies are required at runtime.
